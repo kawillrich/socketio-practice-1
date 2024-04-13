@@ -34,22 +34,24 @@ function preload() {
 }
 
 function create() {
-socket.on('updatePlayers', (backendPlayers) => {
-        for (const id in backendPlayers) {
-            const backendPlayer = backendPlayers[id];
-    
-            if (!players[id]) {
-                players[id] = new Mage(backendPlayer.x, backendPlayer.y, mageConfig)
+    let self = this;
+    socket.on('updatePlayers', (backendPlayers) => {
+            for (const id in backendPlayers) {
+                const backendPlayer = backendPlayers[id];
+        
+                if (!players[id]) {
+                    players[id] = new Mage(backendPlayer.x, backendPlayer.y, mageConfig)
+                }
             }
-        }
-        console.log(players)
+            console.log(players)
 
-        for (const id in players) {
-            const player = players[id];
-            player.attack();
-        }
+            for (const id in players) {
+                const player = players[id];
+                player.attack();
+                //see addPlayer function below to add sprite to the game
+            }
 
-    })
+        })
 }
 
 function update() {
@@ -62,4 +64,7 @@ const players = {
 
 }
 
+// function addPlayer(self, playerInfo) {
+
+// }
 
