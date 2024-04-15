@@ -19,7 +19,7 @@ const mageConfig = {
     armor: 7,
     specialAttack: {
         name: "Fire Ball",
-        image: "assets/images/specialAttacks/fireBall.png",
+        image: "assets/images/special-attacks/fireBall.png",
         damage: 100,
     },
     damage: {
@@ -30,28 +30,27 @@ const mageConfig = {
 }
 
 function preload() {
-    
+    this.load.image("fireball", "public/assets/images/special-attacks/fireball.png")
 }
 
 function create() {
-    let self = this;
-    socket.on('updatePlayers', (backendPlayers) => {
-            for (const id in backendPlayers) {
-                const backendPlayer = backendPlayers[id];
+    this.add.image(200, 200, "fireball");
+
+    // let self = this;
+    // socket.on('updatePlayers', (backendPlayers) => {
+    //         for (const id in backendPlayers) {
+    //             const backendPlayer = backendPlayers[id];
         
-                if (!players[id]) {
-                    players[id] = new Mage(backendPlayer.x, backendPlayer.y, mageConfig)
-                }
-            }
-            console.log(players)
+    //             if (!players[id]) {
+    //                 players[id] = new Mage(backendPlayer.x, backendPlayer.y, mageConfig)
+    //             }
+    //         }
+    //         console.log(players)
 
-            for (const id in players) {
-                const player = players[id];
-                player.attack();
-                //see addPlayer function below to add sprite to the game
-            }
+           
+    //         addPlayer(self, players)
 
-        })
+    //     })
 }
 
 function update() {
@@ -64,7 +63,9 @@ const players = {
 
 }
 
-// function addPlayer(self, playerInfo) {
-
-// }
+function addPlayer(self, playerInfo) {
+    self.add.image(100, 100, "fireball");
+    console.log("test")
+    console.log(self);
+}
 

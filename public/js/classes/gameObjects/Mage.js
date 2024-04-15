@@ -6,9 +6,9 @@ class Mage extends Player {
         this.hitPoints = config.hitPoints;
         this.armor = config.armor;
         config.specialAttack = {
-            name: "",
-            image: "",
-            damage: 0
+            name: "Fire Ball",
+            image: "assets/images/specialAttacks/fireBall.png",
+            damage: 100,
         };
         config.damage = {
             primaryAttack: 0,
