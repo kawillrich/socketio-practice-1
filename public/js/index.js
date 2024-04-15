@@ -18,23 +18,23 @@ const config = {
 
 let game = new Phaser.Game(config);
 
-// const socket = io();
+const socket = io();
 
-// const mageConfig = {
-//     classTitle: "Mage",
-//     hitPoints: 50,
-//     armor: 7,
-//     specialAttack: {
-//         name: "Fire Ball",
-//         image: "assets/images/special-attacks/fireBall.png",
-//         damage: 100,
-//     },
-//     damage: {
-//         primaryAttack: 20,
-//         dashAttack: 30,
-//         specialAttackDamage: 0
-//     }
-// }
+const mageConfig = {
+    classTitle: "Mage",
+    hitPoints: 50,
+    armor: 7,
+    specialAttack: {
+        name: "Fire Ball",
+        image: "assets/images/special-attacks/fireBall.png",
+        damage: 100,
+    },
+    damage: {
+        primaryAttack: 20,
+        dashAttack: 30,
+        specialAttackDamage: 0
+    }
+}
 
 function preload() {
     this.load.image("fireball", "assets/images/special-attacks/fireball.png")
@@ -43,21 +43,21 @@ function preload() {
 function create() {
     this.add.image(400, 400, "fireball");
 
-    // let self = this;
-    // socket.on('updatePlayers', (backendPlayers) => {
-    //         for (const id in backendPlayers) {
-    //             const backendPlayer = backendPlayers[id];
+    let self = this;
+    socket.on('updatePlayers', (backendPlayers) => {
+            for (const id in backendPlayers) {
+                const backendPlayer = backendPlayers[id];
         
-    //             if (!players[id]) {
-    //                 players[id] = new Mage(backendPlayer.x, backendPlayer.y, mageConfig)
-    //             }
-    //         }
-    //         console.log(players)
+                if (!players[id]) {
+                    players[id] = new Mage(backendPlayer.x, backendPlayer.y, mageConfig)
+                }
+            }
+            console.log(players)
 
            
-    //         addPlayer(self, players)
+            addPlayer(self, players)
 
-    //     })
+        })
 }
 
 function update() {
@@ -65,14 +65,14 @@ function update() {
 }
 
 
-// const player = new Player(150, 150)
-// const players = {
+const player = new Player(150, 150)
+const players = {
 
-// }
+}
 
-// function addPlayer(self, playerInfo) {
-//     self.add.image(100, 100, "fireball");
-//     console.log("test")
-//     console.log(self);
-// }
+function addPlayer(self, playerInfo) {
+    self.add.image(100, 100, "fireball");
+    console.log("test")
+    console.log(self);
+}
 
