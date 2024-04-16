@@ -38,13 +38,13 @@ const mageConfig = {
 
 function preload() {
     this.load.image("fireball", "assets/images/special-attacks/fireball.png");
-    const player = {};
-    const players = {}
+    
 }
 
 function create() {
     let fireball = this.add.image(400, 400, "fireball");
-
+    const player = {};
+    const players = {}
     
     
     socket.on('updatePlayers', (backendPlayers) => {
