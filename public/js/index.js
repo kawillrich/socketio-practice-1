@@ -61,7 +61,6 @@ function create() {
             function addPlayer() {
                 // self.add.image(400, 400, "fireball");
                  console.log("test")
-                 console.log(self);
              }
              
 
