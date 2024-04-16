@@ -53,14 +53,13 @@ function create() {
                     players[id] = new Mage(backendPlayer.x, backendPlayer.y, mageConfig)
                 }
             }
-            console.log("index.js" + players)
+            console.log(players)
 
            
             addPlayer()
 
             function addPlayer() {
                 // self.add.image(400, 400, "fireball");
-                 console.log("test")
              }
              
 
