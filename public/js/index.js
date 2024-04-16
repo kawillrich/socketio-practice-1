@@ -53,10 +53,10 @@ function create() {
                     players[id] = new Mage(backendPlayer.x, backendPlayer.y, mageConfig)
                 }
             }
-            console.log(players)
+            console.log("index.js" + players)
 
            
-            addPlayer()
+            this.addPlayer()
 
         })
 }
