@@ -41,9 +41,8 @@ function preload() {
 }
 
 function create() {
-    // this.add.image(400, 400, "fireball");
+    let fireball = this.add.image(400, 400, "fireball");
 
-    let self = this;
 
     
     socket.on('updatePlayers', (backendPlayers) => {
@@ -57,7 +56,7 @@ function create() {
             console.log(players)
 
            
-            addPlayer(self, players)
+            addPlayer()
 
         })
 }
@@ -72,8 +71,8 @@ function update() {
 
 // }
 
-function addPlayer(self, playerInfo) {
-    self.add.image(400, 400, "fireball");
+function addPlayer() {
+   // self.add.image(400, 400, "fireball");
     console.log("test")
     console.log(self);
 }
