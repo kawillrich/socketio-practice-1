@@ -43,7 +43,8 @@ function preload() {
 function create() {
     let fireball = this.add.image(400, 400, "fireball");
 
-
+    const player = {};
+    const players = {}
     
     socket.on('updatePlayers', (backendPlayers) => {
             for (const id in backendPlayers) {
