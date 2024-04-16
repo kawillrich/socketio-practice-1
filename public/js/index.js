@@ -37,14 +37,15 @@ const mageConfig = {
 }
 
 function preload() {
-    this.load.image("fireball", "assets/images/special-attacks/fireball.png")
+    this.load.image("fireball", "assets/images/special-attacks/fireball.png");
+    const player = {};
+    const players = {}
 }
 
 function create() {
     let fireball = this.add.image(400, 400, "fireball");
 
-    const player = {};
-    const players = {}
+    
     
     socket.on('updatePlayers', (backendPlayers) => {
             for (const id in backendPlayers) {
@@ -60,7 +61,7 @@ function create() {
             addPlayer()
 
             function addPlayer() {
-                // self.add.image(400, 400, "fireball");
+                console.log("test")// self.add.image(400, 400, "fireball");
              }
              
 
