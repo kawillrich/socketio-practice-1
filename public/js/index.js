@@ -56,7 +56,14 @@ function create() {
             console.log("index.js" + players)
 
            
-            this.addPlayer()
+            addPlayer()
+
+            function addPlayer() {
+                // self.add.image(400, 400, "fireball");
+                 console.log("test")
+                 console.log(self);
+             }
+             
 
         })
 }
@@ -71,9 +78,4 @@ function update() {
 
 // }
 
-function addPlayer() {
-   // self.add.image(400, 400, "fireball");
-    console.log("test")
-    console.log(self);
-}
 
